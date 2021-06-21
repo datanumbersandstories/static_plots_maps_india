@@ -10,9 +10,9 @@ df_ind = pd.read_csv('./data_solar_energy.csv')
 with open('india_states_pre2019.geojson') as f:
     geojson_ind_states = geojson.load(f)
 
-#**********************************************************************************************************#
-# ............................................. Colors ................................................... #
-#**********************************************************************************************************#
+#*******************************************************************************************************************#
+# ............................................. Colors and Fonts................................................... #
+#*******************************************************************************************************************#
 
 # Colors
 c_white = 'rgb(255, 255, 255)'
@@ -96,24 +96,6 @@ for i in range(len(plot_titles)):
                            zmin=0,
                            text='abc' )
 
-    # fig_i.update_geos( lonaxis={'range': [68, 98], 'showgrid':True, 'tick0':0, 'dtick':1,
-    #                               'gridcolor':'rgb(152, 237, 161)', 'gridwidth':1},
-    #                    lataxis={'range': [6, 38], 'showgrid':True, 'tick0':0, 'dtick':1,
-    #                               'gridcolor':'rgb(152, 237, 161)', 'gridwidth':1},
-    #                    bgcolor='rgb(193, 250, 185)',
-    #                    resolution=110,
-    #                    showframe=True, framecolor='rgb(105, 181, 94)', framewidth=2,
-    #                    projection={'type':'mercator', 'scale':1},
-    #                    center={'lon':83, 'lat':23},
-    #                    visible=True,
-    #                    showcoastlines=True, coastlinecolor='rgb(242, 181, 90)', coastlinewidth=1,
-    #                    showland=True, landcolor='rgb(255, 212, 138)',
-    #                    showocean=True, oceancolor='rgb(140, 164, 255)',
-    #                    showlakes=True, lakecolor='rgb(163, 220, 255)',
-    #                    showrivers=True, rivercolor='rgb(5, 179, 227)', riverwidth=1,
-    #                    showcountries=False,
-    #                    showsubunits=True, subunitcolor='rgb(224, 177, 110)' )
-
     fig_layout.add_trace( fig_i,
                           row=r_i+1,
                           col=c_i+1)
@@ -128,9 +110,9 @@ for i in range(len(plot_titles)):
         c_i=c_i+1
 
 
-#***************************************************************************************************************#
-# .......................................... update_layout() ...................................................#
-#***************************************************************************************************************#
+#*********************************************************************************************************************************#
+# .............................................. update_geos() and update_layout() ...............................................#
+#*********************************************************************************************************************************#
 
 c_bg_geos = 'rgb(255,210,200)'
 
@@ -172,6 +154,3 @@ fig_layout.update_layout( title={'text':'Solar Power Generation Capacity of Each
                            font={'family':f_titlefont_1, 'size':18, 'color':'rgb(16, 37, 51)'})
 
 fig_layout.show()
-
-
-# pio.write_image(fig_ind_lit,'ind_literacy_2011',format='png', engine='kaleido')
